@@ -1,0 +1,18 @@
+<div class="container mt-4 ">
+    <br>
+    <h4 style="text-align:center; ">Registered Farmer's</h4>
+    <br>
+  <div class="row">
+  <div class="col-lg-4" *ngFor="let list of farmerlist">
+  <div class="card">
+      <div class="card-body bg-secondary">
+        <h5 style="color: white;">{{list.Farmer}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Address: {{list.Address}}</li>
+        <li class="list-group-item">Phone: {{list.Mobile}}</li>
+      </ul>
+    </div>
+  </div>
+  
+    

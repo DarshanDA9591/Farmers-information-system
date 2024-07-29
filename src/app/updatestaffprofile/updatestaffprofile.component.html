@@ -1,0 +1,45 @@
+<div class="container mt-4" >
+    <br>
+    <h4 style="text-align:center;  ">Update Profile</h4>
+    <br>
+  <div class="row">
+  <div class="col-lg-6" >
+    <div class="card mt-4">
+      <div class="card-body bg-success">
+        <h5 style="color: white;">{{staff}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Region: {{region}}</li>
+        <li class="list-group-item">Address: {{address}}</li>
+        <li class="list-group-item">Phone: {{mobile}}</li>
+        <li class="list-group-item">Email: {{email}}</li>
+        <li class="list-group-item">User ID: {{staffid}}</li>
+        <li class="list-group-item">Password: {{password}}</li>
+        <div *ngIf="pros">
+          <a class="btn btn-danger" (click)=showforEdit(pros)>Edit</a>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-6 card mt-4 " *ngIf="isShow">
+    <h3 style="text-align:center; color: darkcyan; ">Update Profile</h3>
+    <label for="">Staff Name</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Staff">
+    <br>
+    <label for="">Address</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Address">
+    <br>
+    <label for="">Mobile</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Mobile">
+    <br>
+    <label for="">Staff ID</label>
+    <input type="text" class="form-control" [(ngModel)]="model.StaffID">
+    <br>
+    <label for="">Password</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Password">
+    <br>
+    <button  class="btn btn-success"  (click)="onSub()">Submit</button>
+  </div>
+</div>
+  
+    

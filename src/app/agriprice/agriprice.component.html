@@ -1,0 +1,55 @@
+<h5 class="text-center mt-4">Add Commodities Price</h5>
+<div class="card mt-5" style="width:50%; margin-left: 25%;">
+  <div class="card-body">
+    <!-- <label>Select Region</label>
+    <div *ngIf="rlist">
+    <select [(ngModel)] = "selected" class="form-control text-center  mb-3 btn btn-success">
+      <option [ngValue]="null" disabled>Select</option>
+      <option *ngFor="let list of rlist" [ngValue]="list.RID">{{list.Region}}</option>
+    </select>
+    <div *ngIf="isValidFormStaff" class="csserror">
+    Select Region 
+    </div> 
+    </div> -->
+    <label for="">Commodities Name</label>
+    <input type="text" class="form-control mb-3" [(ngModel)]="model.CName">
+    <div *ngIf="isValidFormCName" class="csserror">
+      Enter Commodities Name
+      </div> 
+    <label for="">Price</label>
+    <input type="text" class="form-control mb-3" [(ngModel)]="model.Price">
+    <div *ngIf="isValidFormPrice" class="csserror">
+      Enter Price 
+      </div> 
+      <label for="">Date</label>
+    <input type="datetime-local" class="form-control mb-3" [(ngModel)]="model.Date">
+    <div *ngIf="isValidFormDate" class="csserror">
+      Select Date 
+      </div> 
+    <div class="d-flex gap-2">
+        <input type="button" value="Submit" (click)="onSub()" class="btn btn-success">
+        <input type="button" value="Back" class="btn btn-secondary">
+    </div>
+  </div>
+</div>
+<div class="container mt-5 mb-5 ">
+  <br>
+  <h4 style="text-align:center;"> Agri Commodities Price Updates</h4>
+  <br>
+<div class="row">
+<div class="col-lg-4" *ngFor="let list of pricelistbyid">
+<div class="card">
+    <div class="card-body text-center ">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item "> <strong class="text-success">{{list.CName}}</strong></li>
+      <li class="list-group-item">{{list.Region}}</li>
+      <li class="list-group-item">{{list.Price | currency: "INR" }}/Quintal</li>
+      <li class="list-group-item txt">Updated:{{list.Date}}</li>
+      <div class="d-flex gap-2 mt-3 text-center">
+        <button (click)=showforEdit(list) class="btn btn-warning"> Edit </button>
+        <input type="button" (click)=showforDelete(list) class="btn btn-danger" value="Delete">
+        </div>
+    </ul>
+    <br>     
+  </div>
+</div>

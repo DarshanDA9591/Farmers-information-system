@@ -1,0 +1,14 @@
+h2{
+    color: white;
+    font-size: 30px;
+  }
+  
+  a{
+    color: white;
+    text-decoration: none;
+  }
+
+
+  a:hover{
+    color: yellow;
+  }

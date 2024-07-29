@@ -1,0 +1,17 @@
+<div class="container mt-5 mb-5 ">
+    <br>
+    <h4 style="text-align:center;"> Agri Commodities Price Updates</h4>
+    <br>
+  <div class="row">
+  <div class="col-lg-4" *ngFor="let list of pricelist">
+  <div class="card">
+      <div class="card-body text-center ">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item "> <strong class="text-success">{{list.CName}}</strong></li>
+        <li class="list-group-item">{{list.Region}}</li>
+        <li class="list-group-item">{{list.Price | currency: "INR" }}/Quintal</li>
+        <li class="list-group-item txt">Updated:{{list.Date}}</li>
+      </ul>
+      <br>     
+    </div>
+  </div>

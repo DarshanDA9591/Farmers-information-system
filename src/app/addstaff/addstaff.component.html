@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="card">
+        <h6 class="card-header bg-secondary p-3 ">Add Staff</h6>
+        <div class="card-body">
+            <label>Select Region</label>
+        <div *ngIf="rlist">
+        <select [(ngModel)] = "selected" class="form-control text-center btn btn-danger mb-3">
+          <option [ngValue]="null" disabled>Select</option>
+          <option *ngFor="let item of rlist" [ngValue]="item.RID">{{item.Region}}</option>
+        </select>
+    <div *ngIf="isValidFormRegion" class="csserror">
+        Select Region
+    </div>
+    <label for="form-class">Enter Staff Name</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Staff">
+    <div *ngIf="isValidFormStaff" class="csserror">
+        Enter Staff Name
+    </div>
+    <br>
+    <label for="form-class">Email Number</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Email"  required>
+    <div *ngIf="isValidFormMobile" class="csserror">
+        Enter Email
+    </div>
+    <br>  
+    <label for="form-class">Phone Number</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Mobile" maxlength="10" required>
+    <div *ngIf="isValidFormMobile" class="csserror">
+        Enter Phone Number
+    </div>
+    <br>
+    <label for="form-class">Address</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Address">
+    <div *ngIf="isValidFormAddress" class="csserror">
+        Enter Address
+    </div>
+    <br>  
+    <div class="container m-4">
+    <button type="submit" (click)="onSubmit()" class="btn btn-danger">Add</button>
+    <a routerLink='' class="btn btn-secondary" style="margin-left: 5px;">Back</a>  
+    </div>
+    </div>
+    </div>

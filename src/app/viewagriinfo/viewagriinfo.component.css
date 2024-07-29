@@ -1,0 +1,26 @@
+.bg{
+    background-color: darkcyan;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 25px;
+    font-family: arial;
+  }
+  h2{
+    color: white;
+    font-size: 20px;
+  
+  }
+  
+  a{
+    color: white;
+    text-decoration: none;
+  }
+    
+
+  .txt{
+    text-align: end;
+    font-size: 13px;
+  }
+  

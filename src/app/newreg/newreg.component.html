@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="card">
+        <h6 class="card-header bg-success p-3 ">Farmer's Registration</h6>
+        <div class="card-body">
+    <label for="form-class"> Name</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Farmer">
+    <div *ngIf="isValidFormFarmer" class="csserror">
+        Enter Farmer Name
+    </div>
+    <br>
+    <label for="form-class">Address</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Address">
+    <div *ngIf="isValidFormAddress" class="csserror">
+        Enter Address
+    </div>
+    <br>
+    <label for="form-class">Phone Number</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Mobile" maxlength="10" required>
+    <div *ngIf="isValidFormMobile" class="csserror">
+        Enter Phone Number
+    </div>
+    <br>
+    <br>
+    <label for="form-class">E-mail ID</label>
+    <input type="text" class="form-control" [(ngModel)]="model.FarmerID">
+    <div *ngIf="isValidFormFarmerID" class="csserror">
+        Enter User ID
+    </div>
+    <br>
+    <label for="form-class">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="model.Password">
+    <div *ngIf="isValidFormPassword" class="csserror">
+        Enter Password
+    </div>
+    <div class="container m-4">
+    <button type="submit" (click)="onSubmit()" class="btn btn-success">Register</button>
+    <a  routerLink='/login'  class="btn btn-secondary" style="margin-left: 5px;">Back</a>  
+    </div>
+    </div>
+    </div>

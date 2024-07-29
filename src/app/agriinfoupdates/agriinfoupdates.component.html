@@ -1,0 +1,30 @@
+<h5 class="text-center mt-5">Add Agri Information</h5>
+<div class="card mt-5" style="max-width:100% " >
+  <div class="card-body">
+   <label for="">Info Title</label>
+   <input type="text" class="form-control mb-3" [(ngModel)]="model.InfoTitle">
+   <label for="">Info</label>
+   <textarea class="form-control mb-3" [(ngModel)]="model.Info"></textarea>
+   <div class="d-flex gap-2">
+   <input type="button" (click)="onSub()" class="btn btn-success" value="Submit">
+   <input type="button" class="btn btn-secondary" value="Back">
+   </div>
+  </div>
+</div>
+<div class="col-lg-12" *ngFor="let list of infolistbyid">
+  <div class="card">
+      <div class="card-body ">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-center"> <strong class="text-success">{{list.InfoTitle}}</strong></li>
+        <li class="list-group-item">{{list.Info}}</li>
+        <li class="list-group-item txt">Posted:{{list.Date}}</li>
+        <div class="d-flex gap-2 mt-3">
+          <button (click)=showforEdit(list) class="btn btn-warning"> Edit </button>
+          <input type="button" (click)=showforDelete(list) class="btn btn-danger" value="Delete">
+          </div>
+      </ul>
+      <br>     
+    </div>
+    
+  </div>
+  

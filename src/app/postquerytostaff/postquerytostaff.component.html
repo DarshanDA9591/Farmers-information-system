@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <h4 style="text-align:center;">Post Query to Staff</h4>
+    <div class="container card p-4">
+        <label>Select Region</label>
+        <div *ngIf="rlist">
+        <select [(ngModel)] = "selected" class="form-control text-center btn btn-success mb-3">
+          <option [ngValue]="null" disabled>Select</option>
+          <option *ngFor="let list of rlist" [ngValue]="list.RID">{{list.Region}}</option>
+        </select>
+    <div *ngIf="isValidFormRegion" class="csserror">
+        Select Region
+    </div>
+    <br>
+    <!-- <label for="form-class">Name</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Farmer">
+    <div *ngIf="isValidFormFarmer" class="csserror">
+        Enter Name
+    </div>
+    <br>
+    <label for="form-class">Mobile Number</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Mobile">
+    <div *ngIf="isValidFormMobile" class="csserror">
+        Enter Mobile Number
+    </div> -->
+    <br>
+    <label for="form-class">Question</label>
+    <textarea class="form-control" [(ngModel)]="model.QQuestion"></textarea>
+    <div *ngIf="isValidFormQuestion" class="csserror">
+        Enter Question
+    </div>
+    <br> 
+    <div class="container m-4">
+    <button type="submit" (click)="onSubmit()" class="btn btn-success">Send</button>
+    <a routerLink='' class="btn btn-secondary" style="margin-left: 5px;">Back</a>  
+    <h6 style="color:green; text-align: center;">{{errorMessage}}</h6> 
+    </div>
+    </div>
+    </div> 
+
+    <br>
+  <br>
+  <h4 style="text-align: center;">View Replies for Queries</h4>
+  <div class="container mt-5" *ngFor="let all of replylist">
+  <div class="card">
+    <h6 class="card-header bg-success">Queries</h6>
+    <div class="card-body">
+      <h6 class="card-text1">Question: {{all.QQuestion}}</h6>
+      <p class="card-text"><i class="fa-sharp fa-solid fa-reply"></i> Reply: {{all.QReply}}</p>
+    </div>
+  </div>

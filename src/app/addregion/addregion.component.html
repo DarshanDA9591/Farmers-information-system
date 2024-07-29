@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row">
+    <div class="card col-lg-6">
+        <h6 class="card-header bg-secondary p-3 ">Add Region</h6>
+        <div class="card-body">
+    <label for="form-class">Enter Region Name</label>
+    <input type="text" class="form-control" [(ngModel)]="model.Region">
+    <div *ngIf="isValidFormRegion" class="csserror">
+        Enter Region Name
+    </div>
+    <br>
+    <div class="container m-4">
+    <button type="submit" (click)="onSubmit()" class="btn btn-danger">Add</button>
+    <a routerLink='' class="btn btn-secondary" style="margin-left: 5px;">Back</a>  
+    </div>
+    </div>  
+    </div>
+        <div class="card col-lg-6">
+            <h6 class="card-header bg-secondary p-3 ">Region List</h6>
+            <div class="card-body">
+        <br>
+        <div class="scroll">
+    <table class="table table-secondary table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Region</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let list of rlist">
+            <td>{{list.RID}}</td>
+            <td>{{list.Region}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+    </div>
+</div>
